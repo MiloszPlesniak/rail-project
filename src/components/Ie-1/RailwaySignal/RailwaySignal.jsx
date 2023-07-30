@@ -3,7 +3,7 @@
 import style from "./RailwaySignal.module.scss";
 import clsx from "clsx";
 
-const RailwaySignal = ({ table }) => {
+const RailwaySignal = ({ table, onClick = ()=>{} }) => {
   const lights = {
     red: clsx(style.red),
     green: clsx(style.green),
@@ -21,6 +21,7 @@ const RailwaySignal = ({ table }) => {
           <div className={style.railwaySignal__signaling}>
             <div className={style.railwaySignal__signal}>
               <div
+                onClick={() => onClick(1)}
                 className={clsx(style.railwaySignal__signalLight, {
                   [red]: table[0] === 1,
                   [green]: table[0] === 2,
@@ -33,6 +34,7 @@ const RailwaySignal = ({ table }) => {
             </div>
             <div className={style.railwaySignal__signal}>
               <div
+                onClick={() => onClick(2)}
                 className={clsx(style.railwaySignal__signalLight, {
                   [red]: table[1] === 1,
                   [green]: table[1] === 2,
@@ -45,6 +47,7 @@ const RailwaySignal = ({ table }) => {
             </div>
             <div className={style.railwaySignal__signal}>
               <div
+                onClick={() => onClick(3)}
                 className={clsx(style.railwaySignal__signalLight, {
                   [red]: table[2] === 1,
                   [green]: table[2] === 2,
@@ -59,6 +62,7 @@ const RailwaySignal = ({ table }) => {
         </div>
         <div className={style.railwaySignal__signalBlock}>
           <div
+            onClick={() => onClick(4)}
             className={clsx(style.railwaySignal__signalBlockLight, {
               [red]: table[3] === 1,
               [green]: table[3] === 2,
